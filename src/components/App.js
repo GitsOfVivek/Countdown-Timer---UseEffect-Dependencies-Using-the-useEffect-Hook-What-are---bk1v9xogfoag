@@ -3,7 +3,7 @@ import '../styles/App.css';
 
 const App = () => {
 	// write your code here
-	const [time, setTime] = useState(null);
+	const [time, setTime] = useState('0');
 
 	const interval = setInterval(() => {
 		setTime(time - 1);
@@ -29,7 +29,9 @@ const App = () => {
 					sec.
 				</h1>
 			</div>
-			<div id="current-time">{time ? parseInt(time).toFixed() : ''}</div>
+			<div id="current-time">
+				{!isNaN(time) ? parseInt(time).toFixed() : '0'}
+			</div>
 		</div>
 	);
 };
